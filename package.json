@@ -26,8 +26,8 @@
     "url": "https://github.com/sagargulati/react-native-play-games/issues"
   },
   "homepage": "https://github.com/sagargulati/react-native-play-games#readme",
-	"peerDependencies": {
-		"react-native": "*",
-		"react": "*"
-	}  
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
 }
