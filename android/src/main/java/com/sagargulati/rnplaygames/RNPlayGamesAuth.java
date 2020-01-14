@@ -2,7 +2,7 @@ package com.sagargulati.rnplaygames;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.facebook.react.bridge.ActivityEventListener;
@@ -17,6 +17,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.api.Scope;
+import com.google.android.gms.common.Scopes;
 import com.google.android.gms.drive.Drive;
 import com.google.android.gms.games.Games;
 import com.google.android.gms.games.Games.GamesOptions;
@@ -164,11 +166,11 @@ public class RNPlayGamesAuth extends ReactContextBaseJavaModule {
     private GoogleSignInClient getSignInClient() {
         // Build Sign in options with SCOPE_APP_FOLDER google drive scope.
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(
-                GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
-                .requestScopes(Drive.SCOPE_APPFOLDER)
-                .requestScopes(Games.SCOPE_GAMES_LITE)
-                .requestEmail()
-                .build();
+                GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN).requestScopes(new Scope(Scopes.GAMES)).build();
+//                .requestScopes(new Scope(Scopes.DRIVE_APPFOLDER), new Scope(Scopes.EMAIL), new Scope(Scopes.GAMES), new Scope(Scopes.PROFILE))
+//                .requestScopes(Games.SCOPE_GAMES_LITE)
+//                .requestScopes(Drive.SCOPE_APPFOLDER)
+//                .requestEmail()
         return GoogleSignIn.getClient(getCurrentActivity(), googleSignInOptions);
     }
 
