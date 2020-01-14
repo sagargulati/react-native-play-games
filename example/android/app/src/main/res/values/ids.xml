@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_id" translatable="false">YOUR_APP_ID_HERE</string>
+    <string name="package_name" translatable="false">com.example</string>
+</resources>
