@@ -1,6 +1,6 @@
 {
   "name": "react-native-play-games",
-  "version": "0.0.2-beta",
+  "version": "0.0.3-beta",
   "description": "React native wrapper for Google play services & play games.",
   "main": "index.js",
   "scripts": {
