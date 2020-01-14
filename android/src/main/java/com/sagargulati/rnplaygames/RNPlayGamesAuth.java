@@ -18,6 +18,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.drive.Drive;
+import com.google.android.gms.games.Games;
+import com.google.android.gms.games.Games.GamesOptions;
 import com.google.android.gms.games.GamesActivityResultCodes;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -162,7 +164,10 @@ public class RNPlayGamesAuth extends ReactContextBaseJavaModule {
     private GoogleSignInClient getSignInClient() {
         // Build Sign in options with SCOPE_APP_FOLDER google drive scope.
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(
-                GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN).requestScopes(Drive.SCOPE_APPFOLDER)
+                GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
+                .requestScopes(Drive.SCOPE_APPFOLDER)
+                .requestScopes(Games.SCOPE_GAMES_LITE)
+                .requestEmail()
                 .build();
         return GoogleSignIn.getClient(getCurrentActivity(), googleSignInOptions);
     }
