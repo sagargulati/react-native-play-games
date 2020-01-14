@@ -46,7 +46,7 @@ public class RNPlayGamesAuth extends ReactContextBaseJavaModule {
 
     // To be exposed to JS
     public final static String AUTH_STATE_CHANGE_EVENT = "AUTH_STATE_CHANGE_EVENT";
-    public static final String AUTH_STATE_CHANGED_EVENT_NAME = "RNPlayGamesauthstate";
+    public static final String AUTH_STATE_CHANGED_EVENT_NAME = "rnplaygamesauthstate";
 
 
     public RNPlayGamesAuth(ReactApplicationContext reactContext) {
@@ -166,11 +166,13 @@ public class RNPlayGamesAuth extends ReactContextBaseJavaModule {
     private GoogleSignInClient getSignInClient() {
         // Build Sign in options with SCOPE_APP_FOLDER google drive scope.
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(
-                GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN).requestScopes(new Scope(Scopes.GAMES)).build();
-//                .requestScopes(new Scope(Scopes.DRIVE_APPFOLDER), new Scope(Scopes.EMAIL), new Scope(Scopes.GAMES), new Scope(Scopes.PROFILE))
+                GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
+//                .requestScopes(new Scope(Scopes.GAMES))
+                .requestScopes(new Scope(Scopes.GAMES), new Scope(Scopes.EMAIL), new Scope(Scopes.DRIVE_APPFOLDER), new Scope(Scopes.PROFILE))
 //                .requestScopes(Games.SCOPE_GAMES_LITE)
 //                .requestScopes(Drive.SCOPE_APPFOLDER)
 //                .requestEmail()
+                .build();
         return GoogleSignIn.getClient(getCurrentActivity(), googleSignInOptions);
     }
 
