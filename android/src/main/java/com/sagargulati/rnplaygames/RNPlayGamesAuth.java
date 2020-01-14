@@ -168,7 +168,6 @@ public class RNPlayGamesAuth extends ReactContextBaseJavaModule {
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(
                 GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
                 .requestScopes(new Scope(Scopes.DRIVE_APPFOLDER), new Scope(Scopes.EMAIL), new Scope(Scopes.GAMES), new Scope(Scopes.PROFILE))
-//                .requestScopes(new Scope(Scopes.GAMES), new Scope(Scopes.EMAIL), new Scope(Scopes.DRIVE_APPFOLDER), new Scope(Scopes.PROFILE))
 //                .requestScopes(Games.SCOPE_GAMES_LITE) // Old Method #1
 //                .requestScopes(Drive.SCOPE_APPFOLDER) // Old Method #2s
 //                .requestEmail()
