@@ -1,0 +1,20 @@
+--------------------
+Legend:
++   Addition
+^   Change
+-   Removed
+*   Security Fix
+#   Bug Fix
+!   Note
+_   Line
+~   Command
+--------------------
+
+----------------------- 10:57 PM Saturday, March 7, 2020
+^ android/build.gradle
+  ^ com.google.gms:google-services (4.3.2 -> 4.3.3)
+  ^ com.android.tools.build:gradle (3.5.3 -> 3.6.0)
+  ^ buildToolsVersion (28.0.3 -> 29.0.2)
+  ^ targetSdkVersion (28 -> 29)
+  ^ compileSdkVersion (28 -> 29)
+
