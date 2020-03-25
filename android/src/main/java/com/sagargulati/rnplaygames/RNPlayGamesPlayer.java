@@ -10,7 +10,7 @@ import com.facebook.react.bridge.WritableMap;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.games.Games;
 import com.google.android.gms.games.Player;
-import com.google.android.gms.games.PlayerLevelInfo;
+//import com.google.android.gms.games.PlayerLevelInfo;
 import com.google.android.gms.games.PlayersClient;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -39,12 +39,12 @@ public class RNPlayGamesPlayer extends ReactContextBaseJavaModule {
             Helpers.rejectPromiseWithAuthenticationRequired(promise);
             return;
         }
-        playersClient.getCurrentPlayer().addOnSuccessListener(new OnSuccessListener<Player, PlayerLevelInfo>() {
+        playersClient.getCurrentPlayer().addOnSuccessListener(new OnSuccessListener<Player>() {
             @Override
-            public void onSuccess(Player player, PlayerLevelInfo playerlevelinfo) {
+            public void onSuccess(Player player) {
                 playerInfoMap.putString("displayName", player.getDisplayName());
                 playerInfoMap.putString("playerId", player.getPlayerId());
-                playerInfoMap.putString("levelInfo", playerlevelinfo.getLevelInfo());
+//                playerInfoMap.putString("levelInfo", playerlevelinfo.getLevelInfo());
                 playerInfoMap.putDouble("lastTimePlayed", player.getLastPlayedWithTimestamp());
                 playerInfoMap.putString("title", player.getTitle());
                 promise.resolve(playerInfoMap);
