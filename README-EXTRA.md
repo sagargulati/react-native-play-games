@@ -186,7 +186,7 @@ Promise(playerInfoObj)
 
 | Name | Type | Description |
 |--|--|--|
-| playerInfoObj | object | ```{ title, lastTimePlayed, playerId, displayName }``` |
+| playerInfoObj | object | ```{ title, lastTimePlayed, playerId, displayName, levelInfo }``` |
 
 
 

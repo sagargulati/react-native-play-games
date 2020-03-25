@@ -10,6 +10,8 @@ _   Line
 ~   Command
 --------------------
 
+----------------------- 02:31 AM Thursday, March 26, 2020
++ support for player.getLevelInfo()
 ----------------------- 10:57 PM Saturday, March 7, 2020
 ^ android/build.gradle
   ^ com.google.gms:google-services (4.3.2 -> 4.3.3)

@@ -43,6 +43,7 @@ public class RNPlayGamesPlayer extends ReactContextBaseJavaModule {
             public void onSuccess(Player player) {
                 playerInfoMap.putString("displayName", player.getDisplayName());
                 playerInfoMap.putString("playerId", player.getPlayerId());
+                playerInfoMap.putString("levelInfo", player.getLevelInfo());
                 playerInfoMap.putDouble("lastTimePlayed", player.getLastPlayedWithTimestamp());
                 playerInfoMap.putString("title", player.getTitle());
                 promise.resolve(playerInfoMap);
